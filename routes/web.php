@@ -28,3 +28,7 @@ Route::middleware(['auth', 'web'])->group(function () {
         Route::get('permissions', function(){ return view('admin.users.permissions');})->name('users-management.permissions');
     });
 });
+
+Route::get('{any}', function () {
+    return view('layouts.app');
+})->where('any', '.*');
